@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U-Line</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+</head>
+<body class="bg-1-abu_abu h-[100vh] overflow-x-hidden">
+    <%-include("navbar")-%>
+
+    <div class="h-[100vh] flex flex-col justify-center items-center" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="ease-out-cubic">
+        <div class="bg-white py-5 px-8 shadow-md rounded-md w-full sm:w-80">
+            <form action="/login/" method="POST">
+                <h1 class="text-xl font-bold text-center mb-3 mt-4">Login</h1>
+                <p class="text-md font-bold">Username</p>
+                <input name="username" type="text" placeholder="example" class="<%if (code == "1"){%> border-red-600 <%} else {%>border-2-abu_abu<%}%> border-solid border-2 w-full box-border px-3 py-1 outline-none rounded-md mb-2" required>
+                <p class="text-md font-bold">Password</p>
+                <input name="password" type="password" placeholder="********" class="<%if (code == "1"){%> border-red-600 <%} else {%>border-2-abu_abu<%}%> border-solid border-2 w-full box-border px-3 py-1 outline-none rounded-md mb-2" required>
+                <%if (code == "1"){%>
+                    <p class="text-center text-red-600">Username atau Password anda salah</p>
+                <%}%>
+                <%if (code == "2"){%>
+                    <p class="text-center text-green-500">Akun anda berhasil diverifikasi, silahkan login</p>
+                <%}%>
+                <p class="text-center">atau</p>
+                <a href="/signup/"><p class="text-center text-1-biru_tua mb-2">Buat Akun</p></a>
+                <input name="submit" type="submit" class="border-2-abu_abu border-solid border-2 w-full box-border px-3 py-1 outline-none rounded-md mb-2 cursor-pointer bg-1-biru_tua text-white" value="Sign In">
+            </form>
+        </div>
+    </div>
+
+    <%-include("footer")-%>
+    <%-include("navbar-script")-%>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<div class="hidden sm:block sm:w-[20vw] lg:w-[15vw] min-h-[100vh] bg-white">
+    <div class="bg-white text-1-biru_tua p-2">
+        <div class="mx-2 my-5">
+            <h1 class="text-xs text-center sm:text-xl lg:text-3xl font-bold">U-Line</h1>
+        </div>
+    </div>
+    <div class="<%if(data.mode === "dashboard") {%> bg-0-biru_tua text-white <%} else {%> bg-white <% } %> hover:bg-0-biru_tua p-2 hover:text-white cursor-pointer">
+        <div class="mx-2 my-1">
+            <h1 class="text-xs sm:text-sm lg:text-md"><a href="/dashboard/">Home</a></h1>
+        </div>
+    </div>
+    <div class="<%if(data.mode === "create") {%> bg-0-biru_tua text-white <%} else {%> bg-white <% } %>  hover:bg-0-biru_tua p-2 hover:text-white cursor-pointer">
+        <div class="mx-2 my-1">
+            <h1 class="text-xs sm:text-sm text-md"><a href="/create/">Buat Undangan</a></h1>
+        </div>
+    </div>
+    <div class="bg-white hover:bg-0-biru_tua p-2 hover:text-white cursor-pointer">
+        <div class="mx-2 my-1">
+            <h1 class="text-xs sm:text-sm text-md">Undangan Saya</h1>
+        </div>
+    </div>
+    <div class="bg-white hover:bg-0-biru_tua p-2 hover:text-white cursor-pointer">
+        <div class="mx-2 my-1">
+            <h1 class="text-xs sm:text-sm text-md">Upload Template</h1>
+        </div>
+    </div>
+    <div class="bg-white hover:bg-0-biru_tua p-2 hover:text-white cursor-pointer">
+        <div class="mx-2 my-1">
+            <h1 class="text-xs sm:text-sm text-md">Pengaturan Akun</h1>
+        </div>
+    </div>
+    <div class="bg-white hover:bg-0-biru_tua p-2 hover:text-white cursor-pointer">
+        <div class="mx-2 my-1">
+            <h1 class="text-xs sm:text-sm text-md"><a href="/logout/">Logout</a></h1>
+        </div>
+    </div>
+</div>
+<!--Navbar Button Mobile-->
+<div class="flex justify-between bg-white p-2 align-middle items-center sm:hidden">
+    <h1 class="text-xl ml-4 text-1-biru_tua font-bold">U-Line Dashboard</h1>
+    <div class="sm:hidden duration-300" id="btn_1">
+        <svg fill="#283862" class="w-10 h-10" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-40.92 -40.92 205.84 205.84" xml:space="preserve" stroke="#283862" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)">
+
+            <g id="SVGRepo_bgCarrier" stroke-width="0">
+        
+                <path transform="translate(-40.92, -40.92), scale(12.865)" fill="#f9f9f9" d="M9.166.33a2.25 2.25 0 00-2.332 0l-5.25 3.182A2.25 2.25 0 00.5 5.436v5.128a2.25 2.25 0 001.084 1.924l5.25 3.182a2.25 2.25 0 002.332 0l5.25-3.182a2.25 2.25 0 001.084-1.924V5.436a2.25 2.25 0 00-1.084-1.924L9.166.33z" strokewidth="0"/>
+        
+            </g>
+        
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+        
+            <g id="SVGRepo_iconCarrier"> <g> <path d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/> <path d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/> <path d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/> </g> </g>
+        
+        </svg>
+    </div>
+</div>
+<div class="sm:hidden absolute w-full transition-transform duration-500 translate-y-[-100rem] z-[1]" id="mobile_navbar">
+    <div class="flex-col w-full bg-white px-6 py-5 sm:hidden">
+        <div class="px-2 py-2 rounded-md mb-3 <%if(data.mode === "dashboard") {%> bg-0-biru_tua <%} else {%> bg-2-abu_abu <% } %> ">
+            <a href="/dashboard/">
+                <h6 class="<%if(data.mode === "dashboard") {%> text-white <%} else {%> text-1-biru_tua <% } %> text-xl font-bold ">Home</h2>
+            </a>
+        </div>
+        <div class="px-2 py-2 rounded-md mb-3 <%if(data.mode === "create") {%> bg-0-biru_tua <%} else {%> bg-2-abu_abu <% } %>">
+            <a href="/create/">
+                <h6 class="<%if(data.mode === "create") {%> text-white <%} else {%> text-1-biru_tua <% } %> text-xl font-bold ">Buat Undangan</h2>
+            </a>
+        </div>
+        <div class="bg-2-abu_abu px-2 py-2 rounded-md mb-3">
+            <a href="#">
+                <h6 class="text-1-biru_tua text-xl font-bold ">Undangan Saya</h2>
+            </a>
+        </div>
+        <div class="bg-2-abu_abu px-2 py-2 rounded-md mb-3">
+            <a href="#">
+                <h6 class="text-1-biru_tua text-xl font-bold ">Upload Template</h2>
+            </a>
+        </div>
+        <div class="bg-2-abu_abu px-2 py-2 rounded-md mb-3">
+            <a href="#">
+                <h6 class="text-1-biru_tua text-xl font-bold ">Pengaturan Akun</h2>
+            </a>
+        </div>
+        <div class="bg-2-abu_abu px-2 py-2 rounded-md mb-3">
+            <a href="/logout/">
+                <h6 class="text-1-biru_tua text-xl font-bold ">Logout</h2>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</head>
+<body>
+    <div class="sm:flex">
+        <%-include("sidebar", {data:data})%>
+        <!---Content-->
+        <div class="sm:w-[80vw] lg:w-[85vw] min-h-[100vh]">
+            <div class="w-full bg-white py-4 px-6">
+                <h1 class="font-bold">Create Invitation</h1>
+            </div>
+            <div class="w-full bg-white py-4 px-6 mt-2">
+                <%-include("templates/"+data.templates, {data:data})%>
+            </div>
+        </div>
+        <!---End Content-->
+    </div>
+    <%-include("navbar-script")%>
+</body>
+</html>

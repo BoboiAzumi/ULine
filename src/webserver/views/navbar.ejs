@@ -1,0 +1,91 @@
+<div class="bg-white px-10 py-3 flex flex-row justify-between sm:justify-center items-center dark:bg-1-biru_tua">
+    <a href="/">
+        <h2 class="text-1-biru_tua text-3xl font-bold ">U-Line</h2>
+    </a>
+    <!---Navbar--->
+    <div class="ml-48 hidden sm:block sm:w-4/12 md:w-6/12 lg:w-7/12">
+        <!--Navbar Group-->
+        <div class="flex justify-end">
+            <!--Navbar Items-->
+            <div class="bg-white w-28 text-center px-5 py-1 rounded-md transition ease-in-out duration-500 hover:bg-2-abu_abu hover:duration-500 after:content-[''] after:bg-1-biru_tua after:h-1 after:bottom-0 after:w-0 after:left-0 after:block after:duration-300 hover:after:w-full">
+                <a href="../#pricing">
+                    <h6 class="text-1-biru_tua text-xl font-bold ">Pricing</h2>
+                </a>
+            </div>
+            <div class="bg-white w-28 text-center px-5 py-1 rounded-md transition ease-in-out duration-500 hover:bg-2-abu_abu hover:duration-500 after:content-[''] after:bg-1-biru_tua after:h-1 after:bottom-0 after:w-0 after:left-0 after:block after:duration-300 hover:after:w-full">
+                <a href="../#about">
+                    <h6 class="text-1-biru_tua text-xl font-bold ">About</h2>
+                </a>
+            </div>
+            <%if (!login) {%>
+            <div class="bg-white w-28 text-center px-5 py-1 rounded-md transition ease-in-out duration-500 hover:bg-2-abu_abu hover:duration-500 after:content-[''] after:bg-1-biru_tua after:h-1 after:bottom-0 after:w-0 after:left-0 after:block after:duration-300 hover:after:w-full">
+                <a href="/login/">
+                    <h6 class="text-1-biru_tua text-xl font-bold ">Login</h2>
+                </a>
+            </div>
+            <%} else {%>
+            <div class="bg-white w-36 text-center px-5 py-1 rounded-md transition ease-in-out duration-500 hover:bg-2-abu_abu hover:duration-500 after:content-[''] after:bg-1-biru_tua after:h-1 after:bottom-0 after:w-0 after:left-0 after:block after:duration-300 hover:after:w-full">
+                <a href="/dashboard/">
+                    <h6 class="text-1-biru_tua text-xl font-bold ">Dashboard</h2>
+                </a>
+            </div>
+            <div class="bg-white w-28 text-center px-5 py-1 rounded-md transition ease-in-out duration-500 hover:bg-2-abu_abu hover:duration-500 after:content-[''] after:bg-1-biru_tua after:h-1 after:bottom-0 after:w-0 after:left-0 after:block after:duration-300 hover:after:w-full">
+                <a href="/logout/">
+                    <h6 class="text-1-biru_tua text-xl font-bold ">Logout</h2>
+                </a>
+            </div>
+            <%}%>
+        </div>
+    </div>
+
+    <!--Navbar Button Mobile-->
+    <div class="sm:hidden duration-300" id="btn_1">
+        <svg fill="#283862" class="w-10 h-10" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-40.92 -40.92 205.84 205.84" xml:space="preserve" stroke="#283862" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)">
+
+            <g id="SVGRepo_bgCarrier" stroke-width="0">
+            
+            <path transform="translate(-40.92, -40.92), scale(12.865)" fill="#f9f9f9" d="M9.166.33a2.25 2.25 0 00-2.332 0l-5.25 3.182A2.25 2.25 0 00.5 5.436v5.128a2.25 2.25 0 001.084 1.924l5.25 3.182a2.25 2.25 0 002.332 0l5.25-3.182a2.25 2.25 0 001.084-1.924V5.436a2.25 2.25 0 00-1.084-1.924L9.166.33z" strokewidth="0"/>
+            
+            </g>
+            
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            
+            <g id="SVGRepo_iconCarrier"> <g> <path d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/> <path d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/> <path d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/> </g> </g>
+            
+        </svg>
+    </div>
+</div>
+<hr class="w-full bg-2-abu_abu">
+<!---Navbar Mobile -->
+<div class="absolute w-full transition-transform duration-500 translate-y-[-100rem] z-[1]" id="mobile_navbar">
+    <div class="flex-col w-full bg-white px-6 py-5 sm:hidden">
+        <div class="bg-2-abu_abu px-2 py-2 rounded-md mb-3">
+            <a href="../#pricing">
+                <h6 class="text-1-biru_tua text-xl font-bold ">Pricing</h2>
+            </a>
+        </div>
+        <div class="bg-2-abu_abu px-2 py-2 rounded-md mb-3">
+            <a href="../#about">
+                <h6 class="text-1-biru_tua text-xl font-bold ">About</h2>
+            </a>
+        </div>
+        <%if (!login) {%>
+        <div class="bg-2-abu_abu px-2 py-2 rounded-md mb-3">
+            <a href="/login/">
+                <h6 class="text-1-biru_tua text-xl font-bold ">Login</h2>
+            </a>
+        </div>
+        <%} else {%>
+        <div class="bg-2-abu_abu px-2 py-2 rounded-md mb-3">
+            <a href="/dashboard/">
+                <h6 class="text-1-biru_tua text-xl font-bold ">Dashboard</h2>
+            </a>
+        </div>
+        <div class="bg-2-abu_abu px-2 py-2 rounded-md mb-3">
+            <a href="/logout/">
+                <h6 class="text-1-biru_tua text-xl font-bold ">Logout</h2>
+            </a>
+        </div>
+        <%}%>
+    </div>
+</div>

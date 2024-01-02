@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgba(246,247,251,255);
+}

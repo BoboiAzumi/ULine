@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <div class="sm:flex">
+        <%-include("sidebar", {data:data})%>
+        <!---Content-->
+        <div class="sm:w-[80vw] lg:w-[85vw] h-[100vh]">
+            <div class="w-full bg-white py-4 px-6">
+                <h1 class="font-bold">Home Dashboard</h1>
+            </div>
+            <div class="w-full py-4 px-6">
+                <h1 class="font-bold text-3xl">Hai, <%=data.nama%></h1>
+            </div>
+            <div class="w-full py-4 px-6 flex-row sm:flex sm:justify-evenly">
+                <div class="bg-white py-4 px-6 rounded-md w-full md:w-3/6 lg:w-2/6 mb-5 mx-1">
+                    <h1 class="text-xl mb-3 text-center">Total Undangan Saya</h1>
+                    <div class="flex justify-center items-center h-[50vh]">
+                        <p class="text-3xl">0</p>
+                    </div>
+                </div>
+                <div class="bg-white py-4 px-6 rounded-md w-full md:w-3/6 lg:w-2/6 mx-1">
+                    <h1 class="text-xl mb-3 text-center">Total Komentar Undangan</h1>
+                    <div class="flex justify-center items-center h-[50vh]">
+                        <p class="text-3xl">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---End Content-->
+    </div>
+    <%-include("navbar-script")%>
+</body>
+</html>

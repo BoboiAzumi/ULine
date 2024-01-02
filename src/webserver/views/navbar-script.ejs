@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    function init(){
+        let btn_1 = document.getElementById("btn_1")
+        let mobile_navbar = document.getElementById("mobile_navbar")
+        let btn_1_toggle = false
+        let btn_1_class = btn_1.getAttribute("class")
+        btn_1.addEventListener("click", (e) => {
+            if(btn_1_toggle){
+                btn_1.setAttribute("class", btn_1_class)
+                //mobile_navbar.style = "display:none"
+                mobile_navbar.classList.toggle("translate-y-0")
+                mobile_navbar.classList.toggle("translate-y-[-100rem]")
+                btn_1_toggle = !btn_1_toggle
+            }
+            else{
+                btn_1.setAttribute("class", btn_1_class+" rotate-90")
+                //mobile_navbar.style = "display:flex"
+                mobile_navbar.classList.toggle("translate-y-0")
+                mobile_navbar.classList.toggle("translate-y-[-100rem]")
+                btn_1_toggle = !btn_1_toggle
+            }
+        })
+    }
+
+    init()
+</script>

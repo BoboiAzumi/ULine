@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U-Line</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body class="bg-1-abu_abu h-[100vh] overflow-x-hidden">
+    <%-include("navbar", {login:login})-%>
+    <!---Content-->
+    <div class="overflow-x-hidden">
+        <div class="flex flex-col sm:flex-row bg-white w-full justify-center items-center h-[100vh]">
+            <div class="p-3 box-border overflow-hidden" data-aos="fade-right" data-aos-duration="2000">
+                <img src="/img/_35b6c398-c2f1-49fd-84a3-0b14abf8dfcc.jpeg" class="rounded-lg" width="300vh">
+            </div>
+            <div class="p-3 w-5/6 sm:w-2/6 md:w-1/6 mx-11 box-border overflow-hidden" data-aos="fade-left" data-aos-duration="2000">
+                <p class="text-xl sm:text-lg md:text-xl lg:text-2xl text-center">U-Line adalah platform untuk membuat undangan online berbasis web hanya dengan menggunakan website U-Line</p>
+            </div>
+        </div>
+        <div class="p-2" id="pricing">
+            <h2 class="text-1-biru_tua text-2xl font-bold text-center my-4">Pricing</h2>
+        </div>
+        <div class="flex flex-col sm:flex-row bg-white w-full justify-center items-center h-[100vh] overflow-hidden">
+            <div class="p-3 w-5/6 sm:w-2/6 md:w-1/6 mx-11 box-border overflow-hidden" data-aos="fade-right" data-aos-duration="2000">
+                <p class="text-xl sm:text-lg md:text-xl lg:text-2xl text-center">Tidak ada biaya layanan apapun, semuanya tersedia gratis</p>
+            </div>
+            <div class="p-3 box-border overflow-hidden" data-aos="fade-left" data-aos-duration="2000">
+                <img src="/img/_e012dec0-e09e-48ef-8730-924fc1ee935c.jpeg" class="rounded-lg" width="300vh">
+            </div>
+        </div>
+        <div class="p-2" id="about">
+            <h2 class="text-1-biru_tua text-2xl font-bold text-center my-4">About</h2>
+        </div>
+        <div class="flex flex-col sm:flex-row bg-white w-full justify-center items-center h-[100vh] overflow-hidden">
+            <div class="p-3 box-border overflow-hidden" data-aos="fade-right" data-aos-duration="2000">
+                <img src="/img/_2364b6cf-b7a0-4d41-bb5d-086858ffff0d.jpeg" class="rounded-lg" width="300vh">
+            </div>
+            <div class="p-3 w-5/6 sm:w-2/6 md:w-1/6 mx-11 box-border overflow-hidden" data-aos="fade-left" data-aos-duration="2000">
+                <p>Hubungi</p>
+                <a href="https://github.com/BoboiAzumi/">
+                    <div class="flex flex-row align-middle items-center my-2">
+                        <img src="/img/github.png" class="align-middle mr-2" width="30" height="30">
+                        <p class="text-black">BoboiAzumi</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!---Footer--->
+
+    <%-include("footer")-%>
+    
+    <%-include("navbar-script")-%>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

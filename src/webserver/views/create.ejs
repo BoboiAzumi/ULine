@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <div class="sm:flex">
+        <%-include("sidebar", {data:data})%>
+        <!---Content-->
+        <div class="sm:w-[80vw] lg:w-[85vw] h-[100vh]">
+            <div class="w-full bg-white py-4 px-6">
+                <h1 class="font-bold">Create Invitation</h1>
+            </div>
+            <div class="w-full bg-white py-4 px-6 h-[100vh] mt-2">
+                <h1 class="text-md mb-2">Pilih Template</h1>
+                <div class="overflow-x-scroll w-[100wh]">
+                    <table class="w-full border-collapse">
+                        <tr>
+                            <th class="text-left">Nama Template</th>
+                            <th class="text-left">Deskripsi</th>
+                            <th class="text-left">#</th>
+                        </tr>
+                        <%data.template.forEach((temp) => {%>
+                            <tr>
+                                <td><%=temp.name%></td>
+                                <td><%=temp.description%></td>
+                                <td>
+                                    <button class="bg-blue-700 text-white px-5 py-2 rounded-md"><a href="/create/<%=temp.templateid%>">Buat</a></button>
+                                </td>
+                            </tr>
+                        <%})%>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!---End Content-->
+    </div>
+    <%-include("navbar-script")%>
+</body>
+</html>

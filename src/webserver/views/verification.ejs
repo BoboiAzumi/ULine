@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript">
+        if("WebSocket" in window){
+            let ws = new WebSocket("ws://localhost:1001/")
+            ws.onopen = () => {
+                let auth = {
+                    method: 'verification',
+                    code: '<%=code%>',
+                    username: '<%=username%>'
+                }
+
+                if(ws.readyState === ws.OPEN){
+                    ws.send(JSON.stringify(auth))
+                }
+            }
+
+            ws.onmessage = (e) => {
+                let receivedata = JSON.parse(e.data)
+                if(receivedata.status === "OK"){
+                    document.location.href = "/login/?code=2"
+                }
+                else if(receivedata.status === "FAKE"){
+                    document.location.href = "/signup/?code=404"
+                }
+                else if(receivedata.status === "TelegramHasDuplicated"){
+                    document.location.href = "/signup/?code=4"
+                }
+                else if(receivedata.status === "success" || receivedata.status === "waitting"){
+                    console.log(receivedata)
+                }
+                else{
+                    document.location.href = "/signup/?code=5"
+                }
+            }
+
+            ws.onerror = (e) => {
+                console.log("ERROR "+e)
+            }
+        }
+        else{
+            alert("Not Support Websocket")
+        }
+    </script>
+</head>
+<body class="bg-1-abu_abu h-[100vh] overflow-x-hidden">
+    <%-include("navbar", {login:login})-%>
+    <div class="h-[100vh] flex flex-col justify-center items-center" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="ease-out-cubic">
+        <div class="bg-white py-5 px-8 shadow-md rounded-md w-full sm:w-80">
+            <h1 class="text-xl font-bold text-center mb-3 mt-4">Verifikasi</h1>
+            <div class="bg-2-abu_abu w-full py-2">
+                <p class="text-md text-center"><%=code%></p>
+            </div>
+            <p class="mt-5">Perintah Bot Telegram</p>
+            <div class="bg-2-abu_abu w-full py-2 ">
+                <p class="text-md text-center">/start <%=code%></p>
+            </div>
+            <a href="https://t.me/Node_chatmail_bot?start=<%=code%>" class="text-white">
+                <button class="w-full bg-1-biru_tua mt-5 rounded-sm py-2">Verifikasi Telegram</button>
+            </a>            
+        </div>
+    </div>
+
+    <%-include("footer")-%>
+    <%-include("navbar-script")-%>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
