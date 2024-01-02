@@ -184,9 +184,26 @@
                 for(let i = 0; i < ev.target.files.length; i++){
                     let reader = new FileReader()
 
-                    reader.onload = function(e) {
-                        
+                    let imgs = document.createElement("div")
+                    let img = document.createElement("img")
+                    imgs.setAttribute("class", "hidden duration-700 ease-in-out")
+                    img.setAttribute("class", "absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2")
+                    if(i == 1){
+                        imgs.setAttribute("data-carousel-item", "active")
                     }
+                    else{
+                        imgs.setAttribute("data-carousel-item", "")
+                    }
+
+                    reader.onload = function(e) {
+                        img.src = e.target.result
+                    }
+
+                    reader.readAsDataURL(ev.target.files[i])
+
+                    imgs.appendChild(img)
+                    galerry.appendChild(imgs)
+                    initFlowbite()
                 }
             }
         })
