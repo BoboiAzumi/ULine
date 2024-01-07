@@ -36,7 +36,7 @@ router.post("/create/", upload.any(), async(req, res) => {
     })
 })
 
-router.get("/:uid", async(req, res) => {
+router.get("/invitation/:uid", async(req, res) => {
     const { uid } = req.params
     const { DB, Client } = await Connect()
     const collection = await DB.collection("invitation")

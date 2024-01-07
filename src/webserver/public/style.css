@@ -564,10 +564,6 @@ video {
   position: relative;
 }
 
-.sticky {
-  position: sticky;
-}
-
 .end-0 {
   inset-inline-end: 0px;
 }
@@ -592,12 +588,12 @@ video {
   z-index: 30;
 }
 
-.z-\[1\] {
-  z-index: 1;
-}
-
 .z-50 {
   z-index: 50;
+}
+
+.z-\[1\] {
+  z-index: 1;
 }
 
 .mx-1 {
@@ -816,10 +812,6 @@ video {
   width: 100%;
 }
 
-.w-6\/12 {
-  width: 50%;
-}
-
 .max-w-full {
   max-width: 100%;
 }
@@ -889,14 +881,6 @@ video {
   overflow: hidden;
 }
 
-.overflow-scroll {
-  overflow: scroll;
-}
-
-.overflow-y-auto {
-  overflow-y: auto;
-}
-
 .overflow-x-hidden {
   overflow-x: hidden;
 }
@@ -955,6 +939,11 @@ video {
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
 }
 
+.bg-gray-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
 .bg-red-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
@@ -967,21 +956,6 @@ video {
 
 .bg-white\/30 {
   background-color: rgb(255 255 255 / 0.3);
-}
-
-.bg-gray-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-}
-
-.bg-gray-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
-
-.bg-gray-950 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(3 7 18 / var(--tw-bg-opacity));
 }
 
 .object-cover {
@@ -1176,26 +1150,6 @@ video {
   transition-duration: 700ms;
 }
 
-.duration-1000 {
-  transition-duration: 1000ms;
-}
-
-.duration-\[10000\] {
-  transition-duration: 10000;
-}
-
-.duration-\[1000000\] {
-  transition-duration: 1000000;
-}
-
-.duration-\[3000ms\] {
-  transition-duration: 3000ms;
-}
-
-.duration-\[300000000000000000ms\] {
-  transition-duration: 300000000000000000ms;
-}
-
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1363,16 +1317,16 @@ body{
     height: 4rem;
   }
 
+  .sm\:h-\[100vh\] {
+    height: 100vh;
+  }
+
   .sm\:h-\[150vh\] {
     height: 150vh;
   }
 
   .sm\:h-\[200px\] {
     height: 200px;
-  }
-
-  .sm\:h-\[100vh\] {
-    height: 100vh;
   }
 
   .sm\:w-16 {
@@ -1391,6 +1345,10 @@ body{
     width: 33.333333%;
   }
 
+  .sm\:w-6\/12 {
+    width: 50%;
+  }
+
   .sm\:w-80 {
     width: 20rem;
   }
@@ -1407,20 +1365,8 @@ body{
     width: 80vw;
   }
 
-  .sm\:w-6\/12 {
-    width: 50%;
-  }
-
   .sm\:flex-row {
     flex-direction: row;
-  }
-
-  .sm\:flex-col {
-    flex-direction: column;
-  }
-
-  .sm\:items-center {
-    align-items: center;
   }
 
   .sm\:justify-center {
