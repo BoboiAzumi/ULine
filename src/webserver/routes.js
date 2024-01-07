@@ -8,6 +8,45 @@ const verification = require("./verification")
 const getTemplate = require("../db/getTemplate")
 const getUser = require("../db/getUser")
 const findTemplate = require("../db/findTemplate")
+const multer = require("multer")
+const path = require("path")
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        if(!(file.mimetype == "audio/mpeg" || file.mimetype == "audio/wav" || file.mimetype == "audio/ogg")){
+            cb(null, path.join(__dirname, "/public/uploads/img/"))
+        }
+        else{
+            cb(null, path.join(__dirname, "/public/uploads/audio/"))
+        }
+        
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + "-"+file.originalname)
+    }
+})
+
+const upload = multer({storage: storage})
+
+router.post("/create/", upload.any(), async(req, res) => {
+    const create = require("./templating/"+req.body.templating_name)
+
+    create(req.body, req.files, () =>{
+        res.send("Miaw")
+    })
+})
+
+router.get("/:uid", async(req, res) => {
+    const { uid } = req.params
+    const { DB, Client } = await Connect()
+    const collection = await DB.collection("invitation")
+
+    const invitation = await collection.find({uid: uid}).toArray()
+
+    Client.close()
+
+    res.render("invitation/"+invitation[0].templating_name, {data: invitation})
+})
 
 router.get("/", sessionCheck,(req, res) => {
     if(req.isLogin){
@@ -76,6 +115,7 @@ router.get("/create/:templates", isNotLogin, async (req, res) => {
         res.redirect("/create/")
     }
 })
+
 
 router.get("/signup/", isLogin, (req, res) => {
     const code = req.query.code ? req.query.code : "0"

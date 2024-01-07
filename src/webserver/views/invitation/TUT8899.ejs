@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun <%=data[0].nama%></title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</head>
+<body>
+    <div class="sm:flex sm:justify-center">
+        <div class="sm:block sm:w-6/12"> 
+            <!---Hal 1-->
+            <div class="fixed z-50 sm:w-6/12" id="overlay">
+                <div class="relative border-2 border-2-abu_abu w-full">
+                    <img class="w-full h-[100vh] sm:h-[100vh]" src="/img/template_assets/TUT8899/background.jpeg">
+                    <div class="absolute top-0 h-[100vh] sm:h-[100vh] w-full">
+                        <div class="flex justify-center items-center w-full h-full">
+                            <div class="flex bg-white p-5 rounded-md w-9/12 flex-col shadow-md">
+                                <p class="text-center text-md sm:text-xl text-red-500 outline-white font-bold mt-3">Undangan Ulang Tahun</p>
+                                <div class="flex justify-center w-full">
+                                    <img id="preview_gambar_depan" class="my-5 rounded-full object-cover w-[150px] h-[150px] sm:w-[200px] sm:h-[200px]" src="/uploads/img/<%=data[0].gambar_depan[0].filename%>">
+                                </div>
+                                <p class="text-center text-md sm:text-xl text-red-500 outline-white font-bold mt-3" id="template_nama"><%=data[0].nama%></p>
+                                <p class="text-center text-md sm:text-xl text-red-600 outline-white font-bold mt-3">Countdown</p>
+                                <div class="flex mt-1 justify-between">
+                                    <div class="w-8 h-8 sm:w-16 sm:h-16 bg-red-500 text-white flex flex-col justify-center rounded-md">
+                                        <p class="text-center text-xs sm:text-md" id="months">0</p>
+                                        <p class="text-center text-xs sm:text-md">Bulan</p>
+                                    </div>
+                                    <div class="w-8 h-8 sm:w-16 sm:h-16 bg-red-500 text-white flex flex-col justify-center rounded-md">
+                                        <p class="text-center text-xs sm:text-md" id="days">0</p>
+                                        <p class="text-center text-xs sm:text-md">Hari</p>
+                                    </div>
+                                    <div class="w-8 h-8 sm:w-16 sm:h-16 bg-red-500 text-white flex flex-col justify-center rounded-md">
+                                        <p class="text-center text-xs sm:text-md" id="hours">0</p>
+                                        <p class="text-center text-xs sm:text-md">Jam</p>
+                                    </div>
+                                    <div class="w-8 h-8 sm:w-16 sm:h-16 bg-red-500 text-white flex flex-col justify-center rounded-md">
+                                        <p class="text-center text-xs sm:text-md" id="minutes">0</p>
+                                        <p class="text-center text-xs sm:text-md">Menit</p>
+                                    </div>
+                                    <div class="w-8 h-8 sm:w-16 sm:h-16 bg-red-500 text-white flex flex-col justify-center rounded-md">
+                                        <p class="text-center text-xs sm:text-md" id="seconds">0</p>
+                                        <p class="text-center text-xs sm:text-md">Detik</p>
+                                    </div>
+                                </div>
+                                <p class="mt-4 text-center font-bold">Kepada</p>
+                                <p class="text-center">Nama Tamu</p>
+                                <div class="flex justify-center mb-5">
+                                    <button id="btn" class="bg-red-500 text-white hover:bg-red-600 w-52 px-4 py-2 mt-3 rounded-md">Buka Undangan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Hal 2-->
+            <div class="relative border-2 border-2-abu_abu w-full" data-aos="flip-left">
+                <img class="w-full h-[100vh] sm:h-[150vh]" src="/img/template_assets/TUT8899/background.jpeg">
+                <div class="absolute top-0 h-[100vh] sm:h-[150vh] w-full">
+                    <div class="flex justify-center items-center w-full h-full">
+                        <div class="flex bg-white p-5 rounded-md w-9/12 flex-col shadow-md" data-aos="flip-left" data-aos-duration="2000">
+                            <p class="text-red-500 text-center font-semibold text-2xl">Undangan Ulang Tahun</p>
+                            <p class="text-center font-semibold text-lg my-5" id="katasambutan">Hai teman-teman, datang ya ke acara ulang tahunku yang ke 20 tahun</p>
+                            <p class="text-center font-semibold text-lg mt-5">Pada</p>
+                            <div class="flex justify-center">
+                                <p class="text-red-500 font-semibold" id="hari_">xxxx</p>
+                                <p class="text-red-500 font-semibold">,&nbsp;</p>
+                                <p class="text-red-500 font-semibold" id="tanggal_">x</p>
+                                <p class="text-red-500 font-semibold">&nbsp;</p>
+                                <p class="text-red-500 font-semibold" id="bulan_">xxxx</p>
+                                <p class="text-red-500 font-semibold">&nbsp;</p>
+                                <p class="text-red-500 font-semibold" id="tahun_">xxxx</p>
+                            </div>
+                            <button class="bg-red-500 mx-10 sm:mx-20 my-7 rounded-md text-white py-2"><a href="#waktu">Waktu Acara</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative border-2 border-2-abu_abu w-full" >
+                <img class="w-full h-[100vh] sm:h-[150vh]" src="/img/template_assets/TUT8899/background.jpeg">
+                <div class="absolute top-0 h-[100vh] sm:h-[150vh] w-full">
+                    <div class="flex justify-center items-center w-full h-full">
+                        <div class="flex bg-white p-5 rounded-md w-9/12 flex-col shadow-md items-center" data-aos="flip-right" data-aos-duration="2000">
+                            <p class="text-red-500 text-center font-semibold text-2xl">Galeri</p>
+                            <img src="/uploads/img/<%=data[0].gambar_depan[0].filename%>" class="w-40 my-3 rounded-md" id="immg">
+            
+                            <div id="gallery" class="relative w-full" data-carousel="slide">
+                                <!-- Carousel wrapper -->
+                                <div class="relative h-56 overflow-hidden rounded-lg md:h-96" id="galerry">
+                                    <%for(let i = 0; i < data[0].galeri.length; i++){%>
+                                        <div class="hidden duration-700 ease-in-out" <%if(i == 1){%>data-carousel-item="active"<%} else {%> data-carousel-item <%}%>>
+                                            <img src="/uploads/img/<%=data[0].galeri[i].filename%>" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                                        </div>
+                                    <%}%>
+                                </div>
+                                <!-- Slider controls -->
+                                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                        <svg class="w-4 h-4 text-black dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                        </svg>
+                                        <span class="sr-only">Previous</span>
+                                    </span>
+                                </button>
+                                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                        <svg class="w-4 h-4 text-black dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                        </svg>
+                                        <span class="sr-only">Next</span>
+                                    </span>
+                                </button>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative border-2 border-2-abu_abu w-full" id="waktu">
+                <img class="w-full h-[100vh] sm:h-[150vh]" src="/img/template_assets/TUT8899/background.jpeg">
+                <div class="absolute top-0 h-[100vh] sm:h-[150vh] w-full">
+                    <div class="flex justify-center items-center w-full h-full">
+                        <div class="flex bg-white p-5 rounded-md w-9/12 flex-col shadow-md" data-aos="fade-up" data-aos-duration="2000">
+                            <p class="text-red-500 text-center font-semibold text-2xl mb-5">Waktu Acara</p>
+                            <table>
+                                <tr>
+                                    <td width="20%">
+                                        Pukul
+                                    </td>
+                                    <td width="5%">:</td>
+                                    <td>
+                                        <p id="pukul"><%=data[0].pukul%></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%" align="top">
+                                        Tempat
+                                    </td>
+                                    <td width="5%" align="top">:</td>
+                                    <td>
+                                        <p id="tempat"><%=data[0].tempat%></p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class="text-red-500 text-center font-semibold text-2xl my-5">Maps</p>
+                            <iframe id="gmaps" src="<%=data[0].gmaps%>"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative border-2 border-2-abu_abu w-full">
+                <img class="w-full h-[100vh] sm:h-[150vh]" src="/img/template_assets/TUT8899/background.jpeg">
+                <div class="absolute top-0 h-[100vh] sm:h-[150vh] w-full">
+                    <div class="flex justify-center items-center w-full h-full">
+                        <div class="flex bg-white p-5 rounded-md w-9/12 flex-col shadow-md" data-aos="zoom-in" data-aos-duration="2000">
+                            <p class="text-red-500 text-center font-semibold text-2xl mb-5">Terima Kasih</p>
+                            <p class="text-red-500 text-center font-semibold text-xl mb-5">Atas perhatian dan Do'a nya, ditunggu kedatangannya ya teman-teman tiada kesan tanpa kehadiran kalian</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        AOS.init()
+        let tanggal = "<%=data[0].tanggal%>"
+        function CountDown(){
+            if (tanggal != null){
+                let sekarang = new Date()
+                let tanggaltujuan = new Date(tanggal)
+
+                let selisih = tanggaltujuan - sekarang;
+
+                let months = Math.floor((selisih / (30.44 * 24 * 60 * 60 * 1000)));
+                let days = Math.floor((selisih / (24 * 60 * 60 * 1000)) - (months * 30.44));
+                let hours = Math.floor((selisih % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+                let minutes = Math.floor((selisih % (60 * 60 * 1000)) / (60 * 1000));
+                let seconds = Math.floor((selisih % (60 * 1000)) / 1000);
+
+                document.getElementById("months").innerHTML = months;
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+
+                document.getElementById("bulan_").innerHTML = tanggaltujuan.toLocaleDateString("id-ID", {month: "long"})
+                document.getElementById("hari_").innerHTML = tanggaltujuan.toLocaleDateString("id-ID", {weekday: "long"})
+                document.getElementById("tanggal_").innerHTML = tanggaltujuan.getDate()
+                document.getElementById("tahun_").innerHTML = tanggaltujuan.getFullYear()
+            }
+        }
+
+        setInterval(() => {
+            CountDown()
+        }, 1000)
+
+        let btn = document.getElementById("btn")
+
+        btn.addEventListener("click", (e) => {
+            let overlay = document.getElementById("overlay")
+            overlay.classList.toggle("fixed")
+            overlay.classList.toggle("absolute")
+            overlay.classList.toggle("translate-y-0")
+            overlay.classList.toggle("translate-y-[-100rem]")
+        })
+    </script>
+</body>
+</html>

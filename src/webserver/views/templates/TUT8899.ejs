@@ -1,22 +1,34 @@
 <div class="sm:flex w-full justify-between mt-5 box-border">
     <div class="w-full sm:w-3/6 sm:mx-5">
         <form action="/create/" method="POST" enctype="multipart/form-data">
+            <input type="hidden" value="TUT8899" name="templating_name">
             <p class="font-bold mb-2">Bagian Depan</p>
             <p>Nama Penyelenggara</p>
-            <input id="nama" type="text" name="nama" placeholder="ex. Anto Budi" class="px-4 py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border">
+            <input id="nama" type="text" name="nama" placeholder="ex. Anto Budi" class="px-4 py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border" required>
             <p>Tanggal Acara</p>
-            <input id="tanggal" type="date" name="tanggal" class="px-4 py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border">
+            <input id="tanggal" type="date" name="tanggal" class="px-4 py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border" required >
             <p>Gambar</p>
-            <input id="gambar_depan" type="file" name="gambar_depan" accept=".jpg, .jpeg, .png, .webp" class="py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border">
+            <input id="gambar_depan" type="file" name="gambar_depan" accept=".jpg, .jpeg, .png, .webp" class="py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border" required>
             <p class="font-bold mb-2">Ketika Undangan Dibuka</p>
             <p class="font-bold mb-2">Halaman 1</p>
             <p>Kata Sambutan</p>
-            <textarea id="input_katasambutan" name="katasambutan" placeholder="Kata Sambutan" class="px-4 py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border">Hai teman-teman, datang ya ke acara ulang tahunku yang ke 20 tahun</textarea>
+            <textarea id="input_katasambutan" name="katasambutan" placeholder="Kata Sambutan" class="px-4 py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border" required>Hai teman-teman, datang ya ke acara ulang tahunku yang ke 20 tahun</textarea>
             <p class="font-bold mb-2">Halaman 2</p>
             <p>Gambar Utama</p>
-            <input id="gambar_utama" type="file" name="gambar_utama" accept=".jpg, .jpeg, .png, .webp" class="py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border">
+            <input id="gambar_utama" type="file" name="gambar_utama" accept=".jpg, .jpeg, .png, .webp" class="py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border" required>
             <p>Galeri (Pilih Lebih dari 1 Gambar)</p>
-            <input id="galeri" type="file" name="galeri[]" accept=".jpg, .jpeg, .png, .webp" class="py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border" multiple>
+            <input id="galeri" type="file" name="galeri" accept=".jpg, .jpeg, .png, .webp" class="py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border" multiple required>
+            <p class="font-bold mb-2">Halaman 3</p>
+            <p>Waktu dan Tempat</p>
+            <p>Waktu</p>
+            <input id="input_pukul" type="time" name="pukul" placeholder="Pukul" class="px-4 py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border" required>
+            <p>Tempat</p>
+            <input id="input_tempat" type="text" name="tempat" placeholder="Tempat" class="px-4 py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border" required>
+            <p>Maps</p>
+            <input id="input_gmaps" type="text" name="gmaps" placeholder="Link Google Maps" class="px-4 py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border" required>
+            <p>Musik Latar</p>
+            <input id="musik" type="file" name="musik" accept=".mp3, .wav, .ogg" class="py-2 outline-none border-solid border-2 rounded-sm border-2-abu_abu w-full box-border" required>
+            <input type="submit" value="Buat" class="px-4 py-2 outline-none border-solid border-2 rounded-sm text-white cursor-pointer bg-gray-900 box-border my-5">
         </form>
     </div>
     <div class="w-full sm:w-3/6 sm:mx-5">
@@ -129,12 +141,58 @@
                 </div>
             </div>
         </div>
+        <div class="relative border-2 border-2-abu_abu w-full">
+            <img class="w-full h-[100vh] sm:h-[150vh]" src="/img/template_assets/TUT8899/background.jpeg">
+            <div class="absolute top-0 h-[100vh] sm:h-[150vh] w-full">
+                <div class="flex justify-center items-center w-full h-full">
+                    <div class="flex bg-white p-5 rounded-md w-9/12 flex-col shadow-md">
+                        <p class="text-red-500 text-center font-semibold text-2xl mb-5">Waktu Acara</p>
+                        <table>
+                            <tr>
+                                <td width="20%">
+                                    Pukul
+                                </td>
+                                <td width="5%">:</td>
+                                <td>
+                                    <p id="pukul"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    Tempat
+                                </td>
+                                <td width="5%">:</td>
+                                <td>
+                                    <p id="tempat">Rumah</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p class="text-red-500 text-center font-semibold text-2xl my-5">Maps</p>
+                        <iframe id="gmaps" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1184.520318723399!2d99.08354199411178!3d3.0313511366538055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1704599112907!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative border-2 border-2-abu_abu w-full">
+            <img class="w-full h-[100vh] sm:h-[150vh]" src="/img/template_assets/TUT8899/background.jpeg">
+            <div class="absolute top-0 h-[100vh] sm:h-[150vh] w-full">
+                <div class="flex justify-center items-center w-full h-full">
+                    <div class="flex bg-white p-5 rounded-md w-9/12 flex-col shadow-md">
+                        <p class="text-red-500 text-center font-semibold text-2xl mb-5">Terima Kasih</p>
+                        <p class="text-red-500 text-center font-semibold text-xl mb-5">Atas perhatian dan Do'a nya, ditunggu kedatangannya ya teman-teman tiada kesan tanpa kehadiran kalian</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script type="text/javascript">
         let tanggal;
         let inputtanggal = document.getElementById("tanggal")
         let input_gambar_utama = document.getElementById("gambar_utama")
         let input_galeri = document.getElementById("galeri")
+        let input_pukul = document.getElementById("input_pukul")
+        let input_tempat = document.getElementById("input_tempat")
+        let input_gmaps = document.getElementById("input_gmaps")
         let immg = document.getElementById("immg")
         let galerry = document.getElementById("galerry")
         let inputkatasambutan = document.getElementById("input_katasambutan")
@@ -208,6 +266,18 @@
             }
         })
 
+        input_pukul.addEventListener("change", (e) => {
+            document.getElementById("pukul").innerHTML = e.target.value + " - Selesai"
+        })
+
+        input_tempat.addEventListener("change", (e) => {
+            document.getElementById("tempat").innerHTML = e.target.value
+        })
+
+        input_gmaps.addEventListener("change", (e) => {
+            document.getElementById("gmaps").setAttribute("src", e.target.value)
+        })
+
         function CountDown(){
             if (tanggal != null){
                 let sekarang = new Date()
@@ -233,6 +303,8 @@
                 document.getElementById("tahun_").innerHTML = tanggaltujuan.getFullYear()
             }
         }
+
+
 
         setInterval(() => {
             CountDown()
