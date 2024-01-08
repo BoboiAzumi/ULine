@@ -41,11 +41,13 @@ router.get("/invitation/:uid", async(req, res) => {
     const { DB, Client } = await Connect()
     const collection = await DB.collection("invitation")
 
+    const { kpd } = req.query
+
     const invitation = await collection.find({uid: uid}).toArray()
 
     Client.close()
 
-    res.render("invitation/"+invitation[0].templating_name, {data: invitation})
+    res.render("invitation/"+invitation[0].templating_name, {data: invitation, kpd:kpd})
 })
 
 router.get("/", sessionCheck,(req, res) => {

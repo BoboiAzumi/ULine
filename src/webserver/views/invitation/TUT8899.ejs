@@ -10,7 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 </head>
-<body>
+<body class="overflow-hidden">
     <div class="sm:flex sm:justify-center">
         <div class="sm:block sm:w-6/12"> 
             <!---Hal 1-->
@@ -168,6 +168,8 @@
             </div>
         </div>
     </div>
+    <div id="music">
+    </div>
     <script>
         AOS.init()
         let tanggal = "<%=data[0].tanggal%>"
@@ -209,6 +211,9 @@
             overlay.classList.toggle("absolute")
             overlay.classList.toggle("translate-y-0")
             overlay.classList.toggle("translate-y-[-100rem]")
+
+	        document.getElementsByTagName("body")[0].classList.toggle("overflow-hidden")
+            document.getElementById("music").innerHTML = '<embed src="/uploads/audio/<%=data[0].musik[0].filename%>" width="2" height="0" loop="true" autostart="true">'
         })
     </script>
 </body>
